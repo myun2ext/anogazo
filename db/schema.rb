@@ -11,16 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150804084624) do
+ActiveRecord::Schema.define(version: 20150804091447) do
 
   create_table "images", force: :cascade do |t|
     t.string   "file_file_name"
     t.string   "file_content_type"
     t.integer  "file_file_size"
     t.datetime "file_updated_at"
-    t.datetime "created_at",        null: false
-    t.datetime "updated_at",        null: false
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
+    t.integer  "uploaded_users_id", default: 1, null: false
   end
+
+  add_index "images", ["uploaded_users_id"], name: "index_images_on_uploaded_users_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
