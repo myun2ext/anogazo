@@ -1,5 +1,14 @@
 %p#notice= notice
-%h1 Listing Images
+%h1 Anogazo
+
+.find
+  Find by tags
+  = form_tag '/images', method: :get do |f|
+    = text_field_tag :name, params[:name]
+    = submit_tag 'Find it'
+
+%br
+
 %table
   %thead
     %tr

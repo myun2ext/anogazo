@@ -4,7 +4,11 @@ class ImagesController < ApplicationController
   # GET /images
   # GET /images.json
   def index
-    @images = Image.all
+    if params[:name]
+      @images = Image.where('images.tags LIKE ?', "%" + params[:name] + "%").all
+    else
+      @images = Image.all
+    end
   end
 
   # GET /images/1
