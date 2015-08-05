@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 20150805092109) do
     t.datetime "created_at",                    null: false
     t.datetime "updated_at",                    null: false
     t.integer  "uploaded_users_id", default: 1, null: false
+    t.integer  "uploaded_user_id",  default: 1, null: false
     t.string   "tags"
   end
 
