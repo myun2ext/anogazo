@@ -7,6 +7,9 @@
       %ul
         - @image.errors.full_messages.each do |message|
           %li= message
-  = f.file_field :file
+  .field
+    = f.file_field :file
+  .field
+    = f.text_field :tags
   .actions
     = f.submit

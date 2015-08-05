@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150804091447) do
+ActiveRecord::Schema.define(version: 20150805092109) do
 
   create_table "images", force: :cascade do |t|
     t.string   "file_file_name"
@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 20150804091447) do
     t.datetime "created_at",                    null: false
     t.datetime "updated_at",                    null: false
     t.integer  "uploaded_users_id", default: 1, null: false
+    t.string   "tags"
   end
 
   add_index "images", ["uploaded_users_id"], name: "index_images_on_uploaded_users_id"
